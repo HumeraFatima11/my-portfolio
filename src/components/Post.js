@@ -4,17 +4,9 @@ import { Link } from 'react-router-dom';
 
 export default function Post() {
     const [postData, setPostData] = useState(null);
-    // console.log("data received")
+    
     useEffect(() => {
-        console.log("Client dATA123")
-        const client = new SanityClient({
-            projectId: '4jcjr9gm',
-            dataset: 'production',
-            
-        });
-        console.log(client,"Client dATA")
-
-        client
+        SanityClient
             .fetch(
                 `*[ _type == "post" ]{
                     title,
